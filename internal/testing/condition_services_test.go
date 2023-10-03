@@ -4,17 +4,16 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/application"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/domain"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/mocks"
+	"github.com/iki-rumondor/assignment3-08/internal/application"
+	"github.com/iki-rumondor/assignment3-08/internal/domain"
+	"github.com/iki-rumondor/assignment3-08/internal/testing/mocks"
 	"github.com/stretchr/testify/assert"
 )
-
 
 func TestUpdateCondition(t *testing.T) {
 	var mockRepo = mocks.NewConditionRepository(t)
 	var condServices = application.NewConditionServices(mockRepo)
-	
+
 	condtion := domain.Condition{
 		Id:    1,
 		Water: 12,

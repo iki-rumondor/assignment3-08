@@ -7,10 +7,10 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/adapter/database"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/adapter/http/response"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/application"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/repository"
+	"github.com/iki-rumondor/assignment3-08/internal/adapter/database"
+	"github.com/iki-rumondor/assignment3-08/internal/adapter/http/response"
+	"github.com/iki-rumondor/assignment3-08/internal/application"
+	"github.com/iki-rumondor/assignment3-08/internal/repository"
 )
 
 var condService *application.ConditionServices

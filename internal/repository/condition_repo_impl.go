@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/domain"
+	"github.com/iki-rumondor/assignment3-08/internal/domain"
 	"gorm.io/gorm"
 )
 

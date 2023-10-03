@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	domain "github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/domain"
+	domain "github.com/iki-rumondor/assignment3-08/internal/domain"
 	mock "github.com/stretchr/testify/mock"
 )
 

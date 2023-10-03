@@ -1,9 +1,9 @@
 package application
 
 import (
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/adapter/http/response"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/domain"
-	"github.com/iki-rumondor/assignment3-GLNG-KS-08-08/internal/repository"
+	"github.com/iki-rumondor/assignment3-08/internal/adapter/http/response"
+	"github.com/iki-rumondor/assignment3-08/internal/domain"
+	"github.com/iki-rumondor/assignment3-08/internal/repository"
 )
 
 type ConditionServices struct {
