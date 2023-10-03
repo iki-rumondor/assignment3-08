@@ -10,17 +10,17 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestUpdateCondition(t *testing.T) {
+func TestUpdateConditionSuccess(t *testing.T) {
 	var mockRepo = mocks.NewConditionRepository(t)
 	var condServices = application.NewConditionServices(mockRepo)
 
-	condtion := domain.Condition{
+	condition := domain.Condition{
 		Id:    1,
 		Water: 12,
 		Wind:  10,
 	}
 
-	mockRepo.Mock.On("Save", &condtion).Return(
+	mockRepo.Mock.On("Save", &condition).Return(
 		nil, errors.New("condition with id 1 is not found"),
 	)
 
@@ -28,4 +28,28 @@ func TestUpdateCondition(t *testing.T) {
 
 	assert.Nil(t, cond, "condition should be nil because condition with Id 1 nothing in databse")
 	assert.NotNil(t, err, "error should be there because condition with Id 1 nothing in databse")
+}
+
+func TestUpdateConditionFailed(t *testing.T) {
+	var mockRepo = mocks.NewConditionRepository(t)
+	var condServices = application.NewConditionServices(mockRepo)
+
+	condition := domain.Condition{
+		Id:    1,
+		Water: 12,
+		Wind:  10,
+	}
+
+	mockRepo.Mock.On("Save", &condition).Return(
+		&domain.Condition{
+			Id:    1,
+			Water: 12,
+			Wind:  10,
+		}, nil,
+	)
+
+	cond, err := condServices.UpdateConditon(12, 10)
+
+	assert.NotNil(t, cond, "condition should be return data condition")
+	assert.Nil(t, err, "error should be nil")
 }
